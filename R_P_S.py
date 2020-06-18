@@ -8,9 +8,9 @@ os.system('cls')
 # pre defining the list of option and their superiority
 rps = ('Rock', 'Paper', 'Scissors')
 rps_dict = {
-    'Rock' : {'Superior':'Scissors', 'Inferior':'Paper'},
-    'Paper' : {'Superior':'Rock', 'Inferior':'Scissors'},
-    'Scissors' : {'Superior':'Paper', 'Inferior':'Rock'}
+    'Rock' : {'Superior': 'Scissors', 'Inferior': 'Paper'},
+    'Paper' : {'Superior': 'Rock', 'Inferior': 'Scissors'},
+    'Scissors' : {'Superior' :'Paper', 'Inferior': 'Rock'}
 }
 
 # Defining the first function which displays the Result
@@ -18,9 +18,9 @@ def display_result(user_point, sys_point, wins, lost, draw) :
     print('Result: ', end=' ')
 
     if user_point > sys_point :
-        print('You WIN !!')
+        print('You WIN!!')
     elif user_point < sys_point :
-        print('You LOOSE ..')
+        print('You LOSE ..')
     else :
         print('It\'s a DRAW !!')
 
@@ -39,11 +39,11 @@ def display_result(user_point, sys_point, wins, lost, draw) :
 def score(rounds) :
     #defining a dictionary of arguments
     game_result = {
-        'user_point':0,
-        'sys_point':0,
-        'wins':0,
-        'lost':0,
-        'draw':0
+        'user_point': 0,
+        'sys_point': 0,
+        'wins': 0,
+        'lost': 0,
+        'draw': 0
     }
     while rounds > 0 :
         user_input = input('Enter your choice (1. Rock, 2. Paper, 3. Scissors, 0. Quit this program: ')
@@ -65,7 +65,7 @@ def score(rounds) :
             elif rps_dict[user_choice]['Inferior'] == sys_choice :
                 game_result['sys_point'] += 1
                 game_result['lost'] += 1
-                result = 'You loose..'
+                result = 'You lose..'
 
             #when users choice and computer's choice is same
             else :
@@ -93,7 +93,7 @@ if __name__ == '__main__':
 
     #asking for the no of rounds to be played and checking if it is valid number
     try :
-        rounds = int(input('How many rounds you want to play? '))
+        rounds = int(input('How many rounds do you want to play? '))
         score(rounds)
     except ValueError :
         print('Please input a valid number!')
